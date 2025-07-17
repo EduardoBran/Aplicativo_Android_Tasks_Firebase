@@ -1,4 +1,4 @@
-package com.luizeduardobrandao.tasksfirebasehilt.ui.viewmodel
+package com.luizeduardobrandao.tasksfirebasehilt.ui.task
 
 import androidx.lifecycle.ViewModel
 

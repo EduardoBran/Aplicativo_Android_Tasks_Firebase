@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.luizeduardobrandao.tasksfirebasehilt.ui.HomeFragment"
+        android:name="com.luizeduardobrandao.tasksfirebasehilt.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
 
@@ -70,7 +70,7 @@
 
     <fragment
         android:id="@+id/formTaskFragment"
-        android:name="com.luizeduardobrandao.tasksfirebasehilt.ui.FormTaskFragment"
+        android:name="com.luizeduardobrandao.tasksfirebasehilt.ui.task.FormTaskFragment"
         android:label="fragment_form_task"
         tools:layout="@layout/fragment_form_task">
 

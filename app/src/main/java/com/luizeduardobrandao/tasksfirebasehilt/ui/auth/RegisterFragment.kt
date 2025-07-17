@@ -1,14 +1,11 @@
 package com.luizeduardobrandao.tasksfirebasehilt.ui.auth
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luizeduardobrandao.tasksfirebasehilt.R
 import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentRegisterBinding
-import com.luizeduardobrandao.tasksfirebasehilt.ui.auth.viewmodel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
 

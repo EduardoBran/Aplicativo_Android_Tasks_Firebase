@@ -1,4 +1,4 @@
-package com.luizeduardobrandao.tasksfirebasehilt.ui.auth
+package com.luizeduardobrandao.tasksfirebasehilt.ui.done
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -6,20 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentLoginBinding
+import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentDoneBinding
 
-class LoginFragment : Fragment() {
+class DoneFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentDoneBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: DoneViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentDoneBinding.inflate(inflater, container, false)
         return binding.root
     }
 

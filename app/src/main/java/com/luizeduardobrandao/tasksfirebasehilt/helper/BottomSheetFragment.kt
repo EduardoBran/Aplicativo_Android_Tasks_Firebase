@@ -1,4 +1,4 @@
-package com.luizeduardobrandao.tasksfirebasehilt.ui
+package com.luizeduardobrandao.tasksfirebasehilt.helper
 
 import android.app.Dialog
 import android.os.Bundle

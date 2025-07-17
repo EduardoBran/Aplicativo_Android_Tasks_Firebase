@@ -1,4 +1,4 @@
-package com.luizeduardobrandao.tasksfirebasehilt.ui
+package com.luizeduardobrandao.tasksfirebasehilt.ui.home
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
 import com.luizeduardobrandao.tasksfirebasehilt.R
 import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentHomeBinding
+import com.luizeduardobrandao.tasksfirebasehilt.ui.doing.DoingFragment
+import com.luizeduardobrandao.tasksfirebasehilt.ui.done.DoneFragment
+import com.luizeduardobrandao.tasksfirebasehilt.ui.todo.TodoFragment
 import com.luizeduardobrandao.tasksfirebasehilt.ui.adapter.ViewPageAdapter
-import com.luizeduardobrandao.tasksfirebasehilt.ui.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 

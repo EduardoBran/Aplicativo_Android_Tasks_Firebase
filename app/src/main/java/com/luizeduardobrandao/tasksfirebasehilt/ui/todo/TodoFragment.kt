@@ -1,4 +1,4 @@
-package com.luizeduardobrandao.tasksfirebasehilt.ui
+package com.luizeduardobrandao.tasksfirebasehilt.ui.todo
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -6,24 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luizeduardobrandao.tasksfirebasehilt.R
-import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentFormTaskBinding
-import com.luizeduardobrandao.tasksfirebasehilt.ui.viewmodel.FormTaskViewModel
+import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentTodoBinding
 
-class FormTaskFragment : Fragment() {
+class TodoFragment : Fragment() {
 
-    private var _binding: FragmentFormTaskBinding? = null
+    private var _binding: FragmentTodoBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: FormTaskViewModel by viewModels()
-
+    private val viewModel: TodoViewModel by viewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
+        _binding = FragmentTodoBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.luizeduardobrandao.tasksfirebasehilt.R
 import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentRecoverAccountBinding
-import com.luizeduardobrandao.tasksfirebasehilt.ui.auth.viewmodel.RecoverAccountViewModel
 
 class RecoverAccountFragment : Fragment() {
 
