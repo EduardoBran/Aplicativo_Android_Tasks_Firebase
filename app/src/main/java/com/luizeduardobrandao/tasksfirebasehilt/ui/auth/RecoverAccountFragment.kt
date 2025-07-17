@@ -7,26 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.luizeduardobrandao.tasksfirebasehilt.R
+import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentRecoverAccountBinding
 import com.luizeduardobrandao.tasksfirebasehilt.ui.auth.viewmodel.RecoverAccountViewModel
 
 class RecoverAccountFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = RecoverAccountFragment()
-    }
+    private var _binding: FragmentRecoverAccountBinding? = null
+    private val binding: FragmentRecoverAccountBinding get() = _binding!!
 
     private val viewModel: RecoverAccountViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_recover_account, container, false)
+        _binding = FragmentRecoverAccountBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

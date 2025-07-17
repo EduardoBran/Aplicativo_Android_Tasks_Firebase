@@ -7,26 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.luizeduardobrandao.tasksfirebasehilt.R
+import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentRegisterBinding
 import com.luizeduardobrandao.tasksfirebasehilt.ui.auth.viewmodel.RegisterViewModel
 
 class RegisterFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = RegisterFragment()
-    }
-
-    private val viewModel: RegisterViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    private var _binding: FragmentRegisterBinding? = null
+    private val binding: FragmentRegisterBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

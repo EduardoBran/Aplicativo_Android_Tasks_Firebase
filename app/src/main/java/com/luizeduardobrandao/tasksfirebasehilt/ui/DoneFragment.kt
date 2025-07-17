@@ -7,26 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.luizeduardobrandao.tasksfirebasehilt.R
+import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentDoneBinding
 import com.luizeduardobrandao.tasksfirebasehilt.ui.viewmodel.DoneViewModel
 
 class DoneFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = DoneFragment()
-    }
+    private var _binding: FragmentDoneBinding? = null
+    private val binding get() = _binding!!
 
     private val viewModel: DoneViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_done, container, false)
+        _binding = FragmentDoneBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
