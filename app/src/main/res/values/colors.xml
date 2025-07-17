@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="color_default">#03B6FC</color>
+
+    <color name="blue_200">#81D4FA</color>
+    <color name="blue_700">#0288D1</color>
+
+    <!-- tons de cinza para o divider -->
+    <color name="divider_gray_light">#888888</color>
+    <color name="divider_gray_dark">#667667</color>
+
+    <color name="color_delete">#FF4C3B</color>
+    <color name="color_details">#03B8A7</color>
+    <color name="btn_back_card">#FF841A</color>
 </resources>

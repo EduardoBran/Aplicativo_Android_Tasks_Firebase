@@ -3,7 +3,27 @@
     <style name="Base.Theme.TasksFirebaseHilt" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- customização da cor de background para todas as telas do aplicativo -->
+        <item name="android:windowBackground">@color/color_default</item>
     </style>
 
     <style name="Theme.TasksFirebaseHilt" parent="Base.Theme.TasksFirebaseHilt" />
+
+    <!-- customização do TabLayout -->
+    <style name="CustomTabLayout" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- customização da floating botton -->
+    <style name="ShapeAppearance.App.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- 50% de width/height = círculo -->
+    </style>
+
+    <style name="Widget.FAB.Circle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.Circle</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="tint">@color/color_default</item>
+    </style>
 </resources>

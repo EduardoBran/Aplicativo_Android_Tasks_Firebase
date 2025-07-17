@@ -2,4 +2,85 @@
     <string name="app_name">TasksFirebaseHilt</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Tela Login -->
+    <string name="text_email">E-mail</string>
+    <string name="hint_email">Digite seu e-mail</string>
+    <string name="text_password">Senha</string>
+    <string name="hint_password">Digite sua senha</string>
+    <string name="text_btn_login">LOGIN</string>
+    <string name="text_create_account">Criar conta</string>
+    <string name="text_recover_account">Recuperar conta</string>
+
+    <string name="text_login_validated">Login efetuado com sucesso!</string>
+    <string name="text_login_email_error">Insira um e-mail válido.</string>
+    <string name="text_login_password_error">Insira uma senha.</string>
+
+    <!-- Tela Register -->
+    <string name="text_btn_create_account">CRIAR CONTA</string>
+    <string name="text_create_validated">Conta criada com sucesso!</string>
+    <string name="text_password_min_length_error">A senha deve ter no mínimo 6 caracteres.</string>
+
+    <!-- Tela Recuperar Conta -->
+    <string name="text_btn_recover_account">ENVIAR</string>
+    <string name="text_msg_explanation">Informe seu e-mail de cadastro para receber um link para alteração da senha.</string>
+    <string name="text_email_sent">Verifique seu e-mail!</string>
+
+    <!-- Títulos do TabLayout -->
+    <string name="cont_btn_logout">Logout</string>
+    <string name="status_task_todo">A Fazer</string>
+    <string name="status_task_doing">Fazendo</string>
+    <string name="status_task_done">Feitas</string>
+
+
+    <!-- Tela Home -->
+    <string name="cont_floating">Nova Tarefa</string>
+    <string name="text_btn_delete">Remover</string>
+    <string name="text_btn_edit">Editar</string>
+    <string name="text_btn_details">Detalhes</string>
+    <string name="cont_btn_next">Avançar</string>
+    <string name="cont_btn_back">Voltar</string>
+    <string name="text_remove">Tarefa removida!</string>
+
+    <string name="text_list_task_empty">Nenhuma tarefa cadastrada.</string>
+    <string name="text_load_list_task">Aguarde as tarefas serem carregadas.</string>
+
+    <string name="text_title_dialog_confirm_logout">Deseja sair da sua conta?</string>
+    <string name="text_button_dialog_confirm_logout">Confirmar</string>
+    <string name="text_message_dialog_confirm_logout">Aperte em confirmar para sair da sua conta.</string>
+    <string name="text_toast_confirm_logout">Usuário deslogado.</string>
+
+    <string name="text_title_dialog_confirm_remove">Deseja remover esta tarefa?</string>
+    <string name="text_message_dialog_confirm_remove">Aperte em confirmar para remover a tarefa.</string>
+    <string name="text_toast_confirm_remove">Tarefa removida!</string>
+
+
+    <!-- Tela Formulário Incluir Nova Tarefa -->
+    <string name="text_description_form">Descrição</string>
+    <string name="hint_description_form">Escreva sua nova tarefa</string>
+    <string name="text_status_form">Status</string>
+    <string name="text_btn_save_form">SALVAR</string>
+
+    <string name="text_form_task_error">Escreva uma tarefa!</string>
+    <string name="text_form_task_saved">Tarefa salva!</string>
+    <string name="text_form_task_update">Tarefa atualizada!</string>
+
+    <string name="text_title_toolbar_new_task">Nova Tarefa</string>
+    <string name="text_title_toolbar_edit_task">Editar Tarefa</string>
+
+
+    <!-- Bottom Sheet -->
+    <string name="text_bottom_sheet_warning">Atenção</string>
+    <string name="text_btn_bottom_sheet">ENTENDI</string>
+
+
+    <!-- Mensagem genérica de erro -->
+    <string name="text_generic_error">Ocorreu um erro. Por favor, tente novamente mais tarde.</string>
+
+
+    <!-- Erros Firebase Authentication -->
+    <string name="account_invalid_login_fragment">Não foi possível fazer login. E‑mail ou senha inválidos.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+
 </resources>
