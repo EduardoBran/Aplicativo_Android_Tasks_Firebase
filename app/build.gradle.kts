@@ -8,6 +8,8 @@ plugins {
     // Hilt
     id("dagger.hilt.android.plugin")
     id("com.google.devtools.ksp")
+    // Parcelize
+    id("kotlin-parcelize") // serve para você poder empacotar objetos em Bundle/Intent
 }
 
 android {
