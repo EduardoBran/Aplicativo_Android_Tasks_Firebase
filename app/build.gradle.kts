@@ -5,6 +5,9 @@ plugins {
     id("com.google.gms.google-services")
     // Safe Args (biblioteca que realiza o envio de dados entre as telas de forma segura)
     id("androidx.navigation.safeargs.kotlin")
+    // Hilt
+    id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -70,4 +73,8 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-storage")
     implementation("com.google.firebase:firebase-appcheck-debug") // recuperacao conta modo debug
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.56.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
 }
