@@ -77,10 +77,10 @@
         <action
             android:id="@+id/action_formTaskFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <argument
-            android:name="task"
-            app:argType="com.luizeduardobrandao.tasksfirebase.data.model.Task"
-            app:nullable="true" />
+<!--        <argument-->
+<!--            android:name="task"-->
+<!--            app:argType="com.luizeduardobrandao.tasksfirebase.data.model.Task"-->
+<!--            app:nullable="true" />-->
 
     </fragment>
 </navigation>

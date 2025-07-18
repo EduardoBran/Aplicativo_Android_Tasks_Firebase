@@ -13,12 +13,12 @@ import javax.inject.Singleton
 
 // * Fornece instâncias de FirebaseAuthDataSource e FirebaseTaskDataSource via Hilt.
 
-@Module
-@InstallIn(SingletonComponent::class)
+@Module                                      // Define este objeto como fonte de dependências
+@InstallIn(SingletonComponent::class)        // Disponibiliza no escopo de toda a aplicação
 object DataSourceFirebaseModule {
 
-    @Provides
-    @Singleton
+    @Provides                                      // Diz ao Hilt “use este mét0do para obter um FirebaseAuth”
+    @Singleton                                     // Mantenha uma única instância durante t0do o app
     fun provideFirebaseAuth(): FirebaseAuth {
         // Retorna a instância singleton de autenticação do Firebase
         return FirebaseAuth.getInstance()
@@ -37,3 +37,13 @@ object DataSourceFirebaseModule {
 //
 // - FirebaseTaskDataSource gerencia as operações CRUD de Task utilizando o DatabaseReference
 //   (referência ao nó tasks/uid).
+
+// O quê faz?
+//
+// @Module sinaliza que aqui há métodos que fornecem dependências.
+//
+// @InstallIn(SingletonComponent::class) define que essas instâncias vivem pelo ciclo de
+// toda a aplicação.
+//
+// @Provides indica o como criar: FirebaseAuth.getInstance() e um DatabaseReference já
+// apontando para /tasks/{uid}.

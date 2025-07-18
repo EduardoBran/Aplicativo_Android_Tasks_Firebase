@@ -23,7 +23,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // Para testes instrumentados com Hilt
+        testInstrumentationRunner = "com.google.dagger.hilt.android.testing.HiltTestRunner"
     }
 
     buildTypes {
@@ -49,14 +50,13 @@ android {
 
 dependencies {
 
+    // Runtime
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+
 
     // Lifecycle, LiveData & ViewModel
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
@@ -79,4 +79,26 @@ dependencies {
     // Hilt
     implementation("com.google.dagger:hilt-android:2.56.2")
     ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+
+    // Coroutines
+    // Importa o BOM das coroutines
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.10.2"))
+    // A extensão para Play Services
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services")
+
+    // Unit tests (src/test/java)
+    testImplementation(libs.junit)                                          // JUnit
+    testImplementation("org.mockito:mockito-core:4.5.1")                    // Mockito
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")           // Mockito‑Kotlin
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")     // Coroutines Test
+    testImplementation("androidx.arch.core:core-testing:2.2.0")             // LiveData / Arch Components testing
+
+    // Android instrumented tests (src/androidTest/java)
+    androidTestImplementation(libs.androidx.junit)                             // AndroidX JUnit
+    androidTestImplementation(libs.androidx.espresso.core)                     // Espresso
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.56.2") // Hilt testing
+    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.56.2")           // KSP for Hilt in androidTest
+    testImplementation(kotlin("test"))
+
+
 }
