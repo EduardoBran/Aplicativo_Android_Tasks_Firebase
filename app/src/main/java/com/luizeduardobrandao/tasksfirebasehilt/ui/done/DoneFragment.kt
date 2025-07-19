@@ -20,6 +20,7 @@ import com.luizeduardobrandao.tasksfirebasehilt.helper.showBottomSheet
 import com.luizeduardobrandao.tasksfirebasehilt.ui.adapter.TaskAdapter
 import com.luizeduardobrandao.tasksfirebasehilt.ui.home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 // Fragment da aba DONE.
@@ -92,36 +93,39 @@ class DoneFragment : Fragment() {
     private fun setupObservers() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                // loading → mostra/oculta ProgressBar
-                launch {
-                    viewModel.loading.collect { isLoading ->
-                        binding.progressBar.isVisible = isLoading
-                    }
-                }
-                // tasks → popula lista, placeholder e texto de “vazio”
-                launch {
-                    viewModel.tasks.collect { list ->
-                        adapter.submitList(list)
-                        binding.rvTasks.isVisible = list.isNotEmpty()
 
+                viewModel.loading
+                    .combine(viewModel.tasks) { loading, list ->
+                        loading to list
+                    }
+                    .collect { (loading, list) ->
+
+                        // 1) Atualiza sempre a lista
+                        adapter.submitList(list)
+
+                        // 2) Só mostra o loading quando não houver nenhum item ainda
+                        val showLoading = loading && list.isEmpty()
+                        binding.progressBar.isVisible = showLoading
+
+                        // 3) Decide o placeholder/texto
                         if (list.isEmpty()) {
-                            // Exibe o TextView de vazio com a nova mensagem
+                            binding.rvTasks.isVisible = false
                             binding.textInfo.apply {
                                 isVisible = true
-                                text = getString(R.string.text_list_task_empty)
+                                text = if (showLoading) {
+                                    // primeira carga
+                                    getString(R.string.text_load_list_task)
+                                } else {
+                                    // após carregar vazio
+                                    getString(R.string.text_list_task_empty)
+                                }
                             }
-                            binding.progressBar.isVisible = false
                         } else {
+                            // já tem itens → exibe lista e esconde tudo o mais
+                            binding.rvTasks.isVisible = true
                             binding.textInfo.isVisible = false
                         }
                     }
-                }
-                // error → exibe BottomSheet de erro
-                launch {
-                    viewModel.error.collect { msg ->
-                        msg?.let { showBottomSheet(message = it) }
-                    }
-                }
             }
         }
     }
