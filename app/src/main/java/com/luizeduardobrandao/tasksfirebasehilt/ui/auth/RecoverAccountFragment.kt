@@ -38,6 +38,11 @@ class RecoverAccountFragment : Fragment() {
 
         // Configura toolbar com botão de voltar
         initToolbar(binding.toolbarRecover)
+        binding.toolbarRecover.setNavigationOnClickListener {
+            viewModel.resetState()            // ← limpa error
+            findNavController().navigateUp()  // ← volta pra tela anterior
+        }
+
         setupListeners()   // Configura os cliques dos botões
         setupObservers()   // Observa o fluxo de estado do ViewModel
     }
@@ -100,9 +105,10 @@ class RecoverAccountFragment : Fragment() {
     // Exibe BottomSheet com a mensagem de erro fornecida, e reabilita a UI para nova tentativa.
     private fun showError(message: String) {
         hideLoading()
+        binding.editTextEmail.text?.clear()
         showBottomSheet(
             message = message,
-            onClick = { }
+            onClick = { viewModel.resetState() }
         )
     }
 

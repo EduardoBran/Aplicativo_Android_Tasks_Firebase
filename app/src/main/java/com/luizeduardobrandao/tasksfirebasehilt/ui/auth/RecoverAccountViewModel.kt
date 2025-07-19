@@ -33,4 +33,9 @@ class RecoverAccountViewModel @Inject constructor(
             }
         }
     }
+
+    // Resetar Estado
+    fun resetState() {
+        _authState.value = AuthState.Idle
+    }
 }

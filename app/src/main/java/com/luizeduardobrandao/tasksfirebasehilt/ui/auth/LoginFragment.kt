@@ -37,6 +37,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.resetState()
+
         setupListeners()  // Configura os cliques dos botões
         setupObservers()  // Configura a coleta de estados do ViewModel
     }
@@ -113,9 +115,11 @@ class LoginFragment : Fragment() {
     // Exibe BottomSheet com a mensagem de erro fornecida, e reabilita a UI para nova tentativa.
     private fun showError(message: String) {
         hideLoading()
+        binding.editTextEmail.text?.clear()
+        binding.editTextPassword.text?.clear()
         showBottomSheet(
             message = message,
-            onClick = { }
+            onClick = { viewModel.resetState() }
         )
     }
 

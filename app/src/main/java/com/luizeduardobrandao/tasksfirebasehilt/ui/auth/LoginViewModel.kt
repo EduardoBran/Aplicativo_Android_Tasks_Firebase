@@ -38,4 +38,9 @@ class LoginViewModel @Inject constructor(
             }
         }
     }
+
+    // Resetar Estado
+    fun resetState() {
+        _authState.value = AuthState.Idle
+    }
 }

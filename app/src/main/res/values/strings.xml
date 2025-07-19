@@ -82,5 +82,6 @@
     <string name="account_invalid_login_fragment">Não foi possível fazer login. E‑mail ou senha inválidos.</string>
     <string name="email_in_use_register_fragment">Este e-mail já está em uso.</string>
     <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+    <string name="fields_empty">Escreva seus dados para autenticação.</string>
 
 </resources>
