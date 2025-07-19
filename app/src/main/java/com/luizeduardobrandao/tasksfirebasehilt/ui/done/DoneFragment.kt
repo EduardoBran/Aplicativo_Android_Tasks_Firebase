@@ -73,7 +73,12 @@ class DoneFragment : Fragment() {
                 }
                 TaskAdapter.SELECT_EDIT   -> navigateToForm(task)
                 TaskAdapter.SELECT_REMOVE -> confirmDelete(task)
-                // NEXT não se aplica aqui
+                TaskAdapter.SELECT_DETAILS -> {
+                    // navega usando o action definid o em main_graph
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToDetailsFragment(task)
+                    )
+                }
             }
         }
         binding.rvTasks.adapter = adapter

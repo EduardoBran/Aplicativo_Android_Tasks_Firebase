@@ -73,6 +73,12 @@ class TodoFragment : Fragment() {
                     ).show()
                 }
                 TaskAdapter.SELECT_REMOVE -> confirmDelete(task)
+                TaskAdapter.SELECT_DETAILS -> {
+                    // navega usando o action definid o em main_graph
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToDetailsFragment(task)
+                    )
+                }
             }
         }
 
