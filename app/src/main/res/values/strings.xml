@@ -57,6 +57,9 @@
     <string name="text_title_toolbar_details">Detalhes da Tarefa</string>
     <string name="text_label_description">Descrição</string>
     <string name="text_label_status">Status</string>
+    <string name="text_status_todo">A fazer</string>
+    <string name="text_status_doing">Fazendo</string>
+    <string name="text_status_done">Feita</string>
 
 
     <!-- Tela Formulário Incluir Nova Tarefa -->

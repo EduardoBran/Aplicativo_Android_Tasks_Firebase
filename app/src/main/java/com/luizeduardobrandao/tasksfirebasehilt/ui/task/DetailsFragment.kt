@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.luizeduardobrandao.tasksfirebasehilt.R
 import com.luizeduardobrandao.tasksfirebasehilt.databinding.FragmentDetailsBinding
+import com.luizeduardobrandao.tasksfirebasehilt.helper.Status
 import com.luizeduardobrandao.tasksfirebasehilt.helper.initToolbar
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,7 +38,14 @@ class DetailsFragment : Fragment() {
         // preenche campos com os dados da Task
         val task = args.task
         binding.textDescription.text = task.description
-        binding.textStatus.text = task.status.name
+
+        // Mapeia o enum Status para o texto em português
+        val statusText = when (task.status) {
+            Status.TODO  -> getString(R.string.text_status_todo)
+            Status.DOING -> getString(R.string.text_status_doing)
+            Status.DONE  -> getString(R.string.text_status_done)
+        }
+        binding.textStatus.text = statusText
     }
 
     override fun onDestroyView() {
