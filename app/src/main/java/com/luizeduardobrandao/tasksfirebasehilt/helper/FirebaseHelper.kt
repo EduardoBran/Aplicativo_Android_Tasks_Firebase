@@ -9,26 +9,20 @@ class FirebaseHelper {
 
     companion object {
 
-        fun getAuth() = FirebaseAuth.getInstance()
-        fun getDatabase() = Firebase.database.reference
-
-        // Recupera ID do usuário
-        fun getIdUser() = getAuth().currentUser?.uid ?: ""
-
-        // Verificar Autenticação (booleano)
-        fun isAutenticated() = getAuth().currentUser != null
-
         // Recebe as mensagens do Firebase e traduz
         fun validError(error: String): Int {
             return when {
                 error.contains("The supplied auth credential is") -> {
                     R.string.account_invalid_login_fragment
                 }
-                error.contains("The email address is already in use") -> {
-                    R.string.email_in_use_register_fragment
+                error.contains("The email address is badly") -> {
+                    R.string.text_login_email_error
                 }
-                error.contains("Password should be at least 6 characters") -> {
-                    R.string.strong_password_register_fragment
+                error.contains("The given password") -> {
+                    R.string.text_password_min_length_error
+                }
+                error.contains("Given String is") -> {
+                    R.string.fields_empty
                 }
                 else -> {
                     R.string.text_generic_error

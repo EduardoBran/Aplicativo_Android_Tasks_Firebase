@@ -79,7 +79,7 @@ class LoginFragment : Fragment() {
                     when (state) {
                         is AuthState.Loading -> showLoading()
                         is AuthState.Success -> handleSuccess()
-                        is AuthState.Error -> showError(state.message)
+                        is AuthState.Error -> showError(getString(state.resId))
                         is AuthState.Idle -> hideLoading()
                     }
                 }

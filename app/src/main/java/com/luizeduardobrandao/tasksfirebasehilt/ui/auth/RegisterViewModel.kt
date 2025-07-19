@@ -3,6 +3,7 @@ package com.luizeduardobrandao.tasksfirebasehilt.ui.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.luizeduardobrandao.tasksfirebasehilt.domain.usecase.RegisterUseCase
+import com.luizeduardobrandao.tasksfirebasehilt.helper.FirebaseHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -29,9 +30,12 @@ class RegisterViewModel @Inject constructor(
             _authState.value = if (result.isSuccess) {
                 AuthState.Success
             } else {
-                AuthState.Error(
-                    result.exceptionOrNull()?.localizedMessage ?: "Erro ao criar conta."
-                )
+                // pega a mensagem raw do Firebase
+                val raw = result.exceptionOrNull()?.message ?: ""
+
+                // traduz para o seu string resource
+                val errorRes = FirebaseHelper.validError(raw)
+                AuthState.Error(errorRes)
             }
         }
     }
